@@ -8,9 +8,7 @@ protected:
 	double x0, v0, x, v, h;
 	double v_v2, eps_e, eps_b, b;
 	int n_max, n_counter, c1, c2;
-	bool flag_cl;
 	virtual void step(double &x, double &v, double &h) = 0;
-	void clear();
 	Syst syst1;
 public:
 	std::vector <std::vector<double>> solve;
@@ -32,11 +30,4 @@ Solver::Solver(int p, double _x0, double _v0, double _h, int _n_max, double _eps
 	b = _b;
 	n_max = _n_max;
 	n_counter = 0;
-	flag_cl = 1;
-}
-
-void Solver::clear()
-{
-	solve.clear();
-	flag_cl = 1;
 }
